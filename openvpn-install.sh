@@ -999,10 +999,9 @@ function newClient () {
 	echo "   1) Add a passwordless client"
 	echo "   2) Use a password for the client"
 
-	until [[ "$PASS" =~ ^[1-2]$ ]]; do
-		read -rp "Select an option [1-2]: " -e -i 1 PASS
-	done
-
+	
+	$PASS = 1	
+		
 	cd /etc/openvpn/easy-rsa/ || return
 	case $PASS in
 		1)
