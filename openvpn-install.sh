@@ -1000,7 +1000,7 @@ function newClient () {
 	echo "   2) Use a password for the client"
 
 	
-	$PASS = 1	
+	$PASS=1	
 		
 	cd /etc/openvpn/easy-rsa/ || return
 	case $PASS in
