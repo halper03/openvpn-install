@@ -1000,18 +1000,9 @@ function newClient () {
 	echo "   2) Use a password for the client"
 
 	
-	$PASS=1	
-		
 	cd /etc/openvpn/easy-rsa/ || return
-	case $PASS in
-		1)
-			./easyrsa build-client-full "$CLIENT" nopass
-		;;
-		2)
-		echo "⚠️ You will be asked for the client password below ⚠️"
-			./easyrsa build-client-full "$CLIENT"
-		;;
-	esac
+	
+	./easyrsa build-client-full "$CLIENT" nopass
 
 	# Home directory of the user, where the client configuration (.ovpn) will be written
 	if [ -e "/home/$CLIENT" ]; then  # if $1 is a user name
